@@ -4,4 +4,8 @@ Start a server in ```lua_wasm_poc``` directory (for example ```python -m http.se
 
 # Update Lua version
 
-Replace the Lua folder with desired version, update ```makefile ``` in ```lua_wasm_poc``` directory accordingly and run ```make``` command.
+1. Install and configure [emscripten](https://emscripten.org/)
+2. Replace the Lua directory with desired version
+3. Update Lua directory path in ```makefile``` in ```lua_wasm_poc``` accordingly
+4. Run ```make``` command
+ 
