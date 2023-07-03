@@ -41,7 +41,7 @@
             var timer;
             function text_changed() {
                 clearTimeout(timer);
-                input = document.getElementById("edit").value;
+                input = parseCode(document.getElementById("edit").value);
                 timer = setTimeout(function() {
                         document.getElementById("result").innerHTML = "";
                         Module.ccall("run_lua", 'number', ['string'], [input]);
@@ -49,15 +49,14 @@
                     750);
             }
        </script>
+        <script src="parser.js"></script>
     </head>
     <body>
         <div>
-        <textarea id="edit" style="width: 800px; height: 480px;" onkeyup="text_changed();">
-function hello_lua()
-    print "Hello Lua!"
-end
-
-hello_lua()</textarea>
+            <textarea id="edit" style="width: 800px; height: 480px;" onkeyup="text_changed();">
+mymathmodule = require("mymath")
+mymathmodule.add(10,20)
+            </textarea>
         <div id="result" style="width: 800px; float: right"></div>
         </div>
     </body>
